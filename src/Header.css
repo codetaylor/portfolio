@@ -1,0 +1,27 @@
+header {
+  padding-top: 8px;
+  padding-bottom: 32px;
+  text-align: center;
+  background-color: #333;
+  color: #999;
+}
+
+header h1 {
+  font-size: 2em;
+}
+
+.Header-button {
+  color: rgb(255, 162, 86) !important;
+  border-bottom: 1px solid rgba(255, 162, 86, 0) !important;
+  /* margin-left: 4px !important;
+  margin-right: 4px !important; */
+  padding-top: 16px !important;
+}
+
+.Header-button.selected {
+  border-bottom: 1px solid rgb(255, 162, 86) !important;
+}
+
+.Header-button:hover:not(.selected) {
+  border-bottom: 1px solid #222 !important;
+}

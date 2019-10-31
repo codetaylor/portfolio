@@ -1,0 +1,11 @@
+.Resume-paper {
+  background-color: #eee !important;
+  padding: 32px 32px;
+  color: #333 !important;
+  margin-top: 48px;
+}
+
+.Resume-paper h1 {
+  font-size: 1.25em;
+  border-bottom: 1px solid #333 !important;
+}

@@ -1,0 +1,30 @@
+.Contact-paper {
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.Contact-form .MuiFilledInput-root {
+  background-color: #ddd;
+}
+
+.Contact-form .MuiFormLabel-root.Mui-focused {
+  color: #333;
+}
+
+.Contact-form .MuiFilledInput-underline:after {
+  border-bottom-color: #333;
+}
+
+.Contact-form .MuiFilledInput-root.Mui-focused.MuiFilledInput-underline:after {
+  border-bottom-color: #333;
+}
+
+.Contact-submit {
+  background-color: #333 !important;
+  color: rgb(255, 162, 86) !important;
+  border: 2px solid #333 !important;
+}
+
+.Contact-submit.Mui-disabled {
+  color: #666 !important;
+}

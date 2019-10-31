@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./Header";
+import Footer from "./Footer";
+import ProjectList from "./ProjectList";
+import Resume from "./Resume";
+import Contact from "./Contact";
+import { ProjectProvider } from "./project-context";
+import { Container } from "@material-ui/core";
+import { Route, Redirect, withRouter, Switch } from "react-router-dom";
 
-function App() {
+const Separator = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Separator">
+      <div className="Separator-arrow"></div>
     </div>
   );
-}
+};
 
-export default App;
+const App = props => {
+  return (
+    <ProjectProvider>
+      <Header history={props.history} location={props.location} />
+      <Container className="App-container" maxWidth="md">
+        <Separator />
+        <Switch>
+          <Route exact path="/" render={props => <Redirect to="/projects" />} />
+          <Route exact path="/projects" render={props => <ProjectList />} />
+          <Route exact path="/resume" render={props => <Resume />} />
+          <Route exact path="/contact" render={props => <Contact />} />
+        </Switch>
+      </Container>
+      <Footer />
+    </ProjectProvider>
+  );
+};
+
+export default withRouter(App);

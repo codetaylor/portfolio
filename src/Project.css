@@ -1,0 +1,32 @@
+.Project-content {
+  background-color: #eee;
+  min-height: 200px;
+}
+
+.Project-actions {
+  background-color: #444;
+  color: #222;
+}
+
+.Project-action-button {
+  color: rgb(255, 162, 86) !important;
+  border-bottom: 1px solid rgba(255, 162, 86, 0) !important;
+}
+
+.Project-action-button:hover {
+  background-color: #333 !important;
+  border-bottom: 1px solid #222 !important;
+}
+
+.Project-tech {
+  margin-top: 8px !important;
+}
+
+.Project-tech-chip {
+  width: 100%;
+  background-color: #ccc !important;
+}
+
+.Project-tech-chip:hover {
+  cursor: pointer;
+}
