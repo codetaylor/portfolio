@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Button, TextField, Grid } from "@material-ui/core";
+import { Paper, Button, TextField, Grid, Typography } from "@material-ui/core";
 import { withFormik } from "formik";
 import * as Yup from "yup";
 import "./Contact.css";
@@ -132,8 +132,21 @@ const FormikForm = withFormik({
 
 export default () => {
   return (
-    <Paper className="Contact-paper">
-      <FormikForm />
-    </Paper>
+    <>
+      <Typography
+        className="Contact-action-text Contact-action-text-upper"
+        align="center"
+        variant="h4"
+        display="block"
+      >
+        Want me to work on your project?
+      </Typography>
+      <Typography className="Contact-action-text" align="center" variant="h4">
+        Drop me a line!
+      </Typography>
+      <Paper className="Contact-paper">
+        <FormikForm />
+      </Paper>
+    </>
   );
 };

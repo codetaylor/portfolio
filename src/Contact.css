@@ -3,6 +3,14 @@
   margin-top: 48px;
 }
 
+.Contact-action-text {
+  color: #ccc;
+}
+
+.Contact-action-text-upper {
+  margin-top: 16px !important;
+}
+
 .Contact-form .MuiFilledInput-root {
   background-color: #ddd;
 }
