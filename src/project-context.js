@@ -12,7 +12,7 @@ const projectState = {
       links: [
         {
           title: "github",
-          url: "https://github.com/SudoPlayGames/Joise"
+          url: "https://github.com/codetaylor/portfolio"
         }
       ]
     },
