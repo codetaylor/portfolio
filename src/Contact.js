@@ -12,10 +12,19 @@ const validationSchema = Yup.object().shape({
   message: Yup.string().required()
 });
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const handleSubmit = (values, { setSubmitting }) => {
   setSubmitting(true);
-  // TODO: do stuff
-  window.setTimeout(() => setSubmitting(false), 2000);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({ "form-name": "contact", ...values })
+  });
 };
 
 const initialValues = {
@@ -36,68 +45,69 @@ const Form = props => {
   } = props;
 
   return (
-    <form
-      className="Contact-form"
-      // onSubmit={handleSubmit}
-      action="https://formspree.io/contact@codetaylor.com"
-      method="POST"
-    >
+    <form className="Contact-form" onSubmit={handleSubmit}>
       <Grid container spacing={1} justify="center">
-        <Grid item xs={12} sm={6}>
-          <TextField
-            variant="filled"
-            margin="dense"
-            fullWidth
-            id="name"
-            label="Name"
-            name="name"
-            autoComplete="name"
-            autoFocus
-            value={values.name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={errors.name && touched.name}
-            helperText={errors.name && touched.name ? errors.name : " "}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            variant="filled"
-            margin="dense"
-            fullWidth
-            name="email"
-            label="Email"
-            type="email"
-            id="email"
-            autoComplete="email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={errors.email && touched.email}
-            helperText={errors.email && touched.email ? errors.email : " "}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            variant="filled"
-            margin="dense"
-            multiline
-            rows={5}
-            fullWidth
-            name="message"
-            label="Message"
-            type="message"
-            id="message"
-            autoComplete="message"
-            value={values.message}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={errors.message && touched.message}
-            helperText={
-              errors.message && touched.message ? errors.message : " "
-            }
-          />
-        </Grid>
+        {!isSubmitting && (
+          <Grid item xs={12} sm={6}>
+            <TextField
+              variant="filled"
+              margin="dense"
+              fullWidth
+              id="name"
+              label="Name"
+              name="name"
+              autoComplete="name"
+              autoFocus
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={errors.name && touched.name}
+              helperText={errors.name && touched.name ? errors.name : " "}
+            />
+          </Grid>
+        )}
+        {!isSubmitting && (
+          <Grid item xs={12} sm={6}>
+            <TextField
+              variant="filled"
+              margin="dense"
+              fullWidth
+              name="email"
+              label="Email"
+              type="email"
+              id="email"
+              autoComplete="email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={errors.email && touched.email}
+              helperText={errors.email && touched.email ? errors.email : " "}
+            />
+          </Grid>
+        )}
+        {!isSubmitting && (
+          <Grid item xs={12}>
+            <TextField
+              variant="filled"
+              margin="dense"
+              multiline
+              rows={5}
+              fullWidth
+              name="message"
+              label="Message"
+              type="message"
+              id="message"
+              autoComplete="message"
+              value={values.message}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={errors.message && touched.message}
+              helperText={
+                errors.message && touched.message ? errors.message : " "
+              }
+            />
+          </Grid>
+        )}
         <Grid item xs={4}>
           <Button
             type="submit"
@@ -106,7 +116,7 @@ const Form = props => {
             variant="contained"
             disabled={isSubmitting}
           >
-            Send
+            {isSubmitting ? "Thank you!" : "Send"}
           </Button>
         </Grid>
       </Grid>
