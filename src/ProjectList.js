@@ -6,7 +6,7 @@ import { useProjectState } from "./project-context.js";
 import "./ProjectList.css";
 
 const GithubButton = () => (
-  <Button className="ProjectList-button">
+  <Button className="ProjectList-button button-github">
     github&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i>
   </Button>
 );
@@ -16,12 +16,11 @@ const ProjectList = () => {
 
   return (
     <>
-      <Grid container spacing={8}>
-        <Grid item sm={12} align="right">
+      <Grid container spacing={8} justify="center">
+        <Grid item sm={12} align="center">
           <GithubButton />
         </Grid>
       </Grid>
-
       <Grid container spacing={2} justify="center">
         {projectState.projects.map(project => (
           <Grid item sm style={{ minWidth: 264 }} align="center">
