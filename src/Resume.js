@@ -5,9 +5,7 @@ import "./Resume.css";
 const skills = [
   // back end
   "Java",
-  "REST",
-  "ORM",
-  "MVC",
+  "Hibernate",
   "PHP",
   "MySQL",
 
@@ -16,6 +14,13 @@ const skills = [
   "CSS",
   "React",
   "Javascript",
+
+  // concepts
+  "REST",
+  "ORM",
+  "MVC",
+  "ECS",
+  "Scrum",
 
   // mvc framework
   "Codeigniter",
@@ -29,8 +34,13 @@ const skills = [
 
   // game dev
   "OpenGL",
+  "JMonkeyEngine",
   "LWJGL",
-  "Android/LibGDX"
+  "Android/LibGDX",
+  "WebGL",
+
+  // misc
+  "Wordpress"
 ];
 
 // front end
@@ -42,16 +52,16 @@ export default props => {
     <Container maxWidth="md">
       <Paper className="Resume-paper">
         <p>
-          Tenacious problem-solver with 8+ years of experience in software
+          Tenacious problem-solver with 10+ years of experience in software
           design and development. Active maintainer of several open-source Java
           projects. Seeking to supplement indie game development earnings with
           part-time position or contract work.
         </p>
-        <h1>Skills</h1>
-        {skills.map(skill => (
+        <h1>Experience</h1>
+        {skills.sort().map(skill => (
           <Chip label={skill} style={{ marginRight: 4, marginBottom: 4 }} />
         ))}
-        <h1>Experience</h1>
+        <h1>Employment</h1>
         <Grid container>
           <Grid item xs={12} sm={3}>
             <strong>2011 - Current</strong>
