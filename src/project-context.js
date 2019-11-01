@@ -8,7 +8,14 @@ const projectState = {
       title: "Portfolio",
       description:
         "A responsive portfolio developed with modern web technologies.",
-      tech: ["React", "HTML", "CSS", "Javascript", "Material UI"],
+      tech: [
+        "React",
+        "react-router-dom",
+        "HTML",
+        "CSS",
+        "Formik",
+        "Material UI"
+      ],
       links: [
         {
           title: "github",
@@ -35,8 +42,15 @@ const projectState = {
     {
       title: "Pyrotech",
       description:
-        "A Minecraft mod developed with a custom interaction / rendering framework and a custom, optimized network layer.",
-      tech: ["Java", "OpenGL", "ZenScript"],
+        "A Minecraft mod with a custom interaction / rendering framework and an optimized network layer.",
+      tech: [
+        "Java",
+        "OpenGL",
+        "ZenScript",
+        "MinecraftForge",
+        "CraftTweaker",
+        "Gson"
+      ],
       links: [
         {
           title: "github",
@@ -52,7 +66,14 @@ const projectState = {
       title: "Artisan Worktables",
       description:
         "An extensively documented Minecraft mod designed to provide extreme customization via ZenScript.",
-      tech: ["Java", "OpenGL", "ZenScript"],
+      tech: [
+        "Java",
+        "OpenGL",
+        "ZenScript",
+        "MinecraftForge",
+        "CraftTweaker",
+        "Gson"
+      ],
       links: [
         {
           title: "github",
@@ -79,7 +100,7 @@ const projectState = {
     {
       title: "SudoXT",
       description:
-        "A custom plugin solution featuring run-time compilation, injected instrumentation, and child-first, custom classloader behavior.",
+        "A custom plugin solution featuring run-time compilation and reloading, injected instrumentation, and child-first, custom classloader behavior.",
       tech: ["Java", "Janino", "ASM"],
       links: [
         {
