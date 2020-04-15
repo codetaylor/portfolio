@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import "./Header.css";
+import { Avatar, Box } from "@material-ui/core";
 
 const ProjectButton = ({ history, pathname }) => (
   <Button
@@ -60,28 +61,47 @@ const ContactButton = ({ history, pathname }) => (
   </Button>
 );
 
-const GithubButton = () => (
-  <Button className="Header-button Header-button-github">
-    <Grid container>
-      <Grid item xs={12}>
-        <i className="fab fa-github fa-2x"></i>
-      </Grid>
-      <Grid item xs={12}>
-        github&nbsp;<i class="fas fa-external-link-alt"></i>
-      </Grid>
-    </Grid>
-  </Button>
-);
+// const GithubButton = () => (
+//   <Button className="Header-button Header-button-github">
+//     <Grid container>
+//       <Grid item xs={12}>
+//         <i className="fab fa-github fa-2x"></i>
+//       </Grid>
+//       <Grid item xs={12}>
+//         github&nbsp;<i class="fas fa-external-link-alt"></i>
+//       </Grid>
+//     </Grid>
+//   </Button>
+// );
 
-export default props => {
-  const { history, location } = props;
+export default (props) => {
+  const { history, location, classes } = props;
   const { pathname } = location;
   return (
     <header>
-      <h1>Jason Taylor</h1>
-      <ProjectButton history={history} pathname={pathname} />
-      <ResumeButton history={history} pathname={pathname} />
-      <ContactButton history={history} pathname={pathname} />
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+      >
+        <Avatar
+          alt="Jason Taylor"
+          src="images/avatar.png"
+          style={{
+            width: "64px",
+            height: "64px",
+            marginTop: "16px",
+          }}
+        />
+        <h1>Jason Taylor</h1>
+        <Box>
+          <ProjectButton history={history} pathname={pathname} />
+          <ResumeButton history={history} pathname={pathname} />
+          <ContactButton history={history} pathname={pathname} />
+        </Box>
+      </Grid>
     </header>
   );
 };
