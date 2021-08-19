@@ -4,7 +4,7 @@ import "./Footer.css";
 export default () => {
   return (
     <footer>
-      <p>© 2019 Jason Taylor</p>
+      <p>© 2021 Jason Taylor</p>
     </footer>
   );
 };

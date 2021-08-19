@@ -6,7 +6,7 @@ import { useProjectState } from "./project-context.js";
 import "./ProjectList.css";
 
 const GithubButton = () => (
-  <Button className="ProjectList-button button-github">
+  <Button className="ProjectList-button button-github" target="_blank" href={"https://github.com/codetaylor"}>
     github&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i>
   </Button>
 );

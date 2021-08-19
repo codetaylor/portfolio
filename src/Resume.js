@@ -52,9 +52,9 @@ export default (props) => {
     <Container maxWidth="md">
       <Paper className="Resume-paper">
         <p>
-          Tenacious problem-solver with 10+ years of experience in software
+          Tenacious problem-solver with 30+ years of experience in software
           design and development. Active maintainer of several open-source Java
-          projects. Seeking contract work.
+          projects.
         </p>
         <h1>Experience</h1>
         {skills.sort().map((skill) => (
