@@ -75,7 +75,7 @@ const ContactButton = ({ history, pathname }) => (
 // );
 
 export default (props) => {
-  const { history, location, classes } = props;
+  const { history, location } = props;
   const { pathname } = location;
   return (
     <header>
